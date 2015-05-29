@@ -1,0 +1,47 @@
+
+module cuffia(){
+//color("DarkSlateGray",1)
+//{
+	rotate([90,0,0])
+	{
+		difference()
+		{
+			color("Red",1)cylinder(h=3, r1=10, r2=6, $fn=100);
+			color("DarkSlateGray",1)translate([0,-5,1.5])cube([9,10,3],true);
+		}	
+		//translate([0,0,3])cylinder(h=4,r=10, $fn=100);
+		color("DarkSlateGray",1)translate([0,0,-10])cylinder(h=10, r=10, $fn=100);
+		color("DarkSlateGray",1)translate([0,0,-13])cylinder(h=3, r1=4, r2=10, $fn=100);
+		color("DarkSlateGray",1)translate([0,0,-17])cylinder(h=5, r=2.5, $fn=100);
+		difference(){
+		color("DarkSlateGray",1)translate([0,0,-19])cylinder(h=2, r=3, $fn=100);
+		color("Red",1)translate([0,0,-20.])cylinder(h=1.1, r=2.5, $fn=100);
+	}
+//}
+}
+translate([-2,0,3])cube([2,3,1]);
+}
+cuffia();
+module Beats()
+{	
+	rotate([90,0,0])
+	{
+	difference()
+		{
+			color("Red",1)translate([0,0,6.6])cylinder(h= 0.5,r=5, $fn=100);
+			color("Red",1)translate([0,0,6.6])cylinder(h= 0.5,r=3, $fn=100);
+		}
+	difference()
+		{
+			color("Red",1)translate([-5,0,6.6])cube([2,10,4]);
+			color("Red",1)translate([0,0,6])cylinder(h= 1.1,r=4, $fn=100);
+		}
+	}
+}
+
+
+	difference()
+	{
+		rotate([90,0,0])color("DarkSlateGray")translate([0,0,3])cylinder(h=4,r=10, $fn=100);
+		Beats();
+	}
