@@ -37,11 +37,30 @@ module topbox() {
 
 // Hole - Jack
 module jack() {
-	translate ([67.9,1,12.5]) {//67.9
-		rotate([90,90,0]) cylinder(4,4.7,3.7,$fn=25);
+	translate ([76,4,11.5]) {//67.9
+		rotate([90,90,0]) cylinder(h=45, r1=2.5, r2=23,$fn=25);
 	}
 }
 
+//Hole - Sata
+module sata(){
+	translate ([46.4,-1,35])cube([17,4,6]);
+}
+
+//Hole - Wifi
+module wifi(){
+	translate([-1,50,40])rotate([0,90,0])cylinder(h=4,r2=3,r1=3.5, $fn=25);
+}
+
+//Hole - Bluetooth
+module bluetooth(){
+	translate([-1,27,35])cube([4,15,2]);
+}
+
+//Hole - SPIDIF
+module spidif(){
+	translate([-1,5,35])cube([4,15,15]);
+}
 // Hole - Digital
 module digital() {
 	translate ([48.6,62.5,16.2]) {
@@ -154,4 +173,12 @@ difference() {
 	translate ([94,44.5,17.5]) cube([5,13.1,5.5]);
 	translate([0,0,19.9])usb();
 	translate([0,-20.5,19.9])usb();
+	sata();
+	translate([-45,0,27])jack();
+	translate([-55,0,27])jack();
+	wifi();
+	bluetooth();
+	spidif();
 }
+
+
